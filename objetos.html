@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos</title>
+</head>
+<body>
+    <h1>Objetos Javascript</h1>
+    <p>Os objetos no Javascript se consistem em uma coleção de propriedades, onde cada propriedade será uma associação entre um nome e um valor. São definidos através de um par de chaves "{}" e os valores podem ser desde strings, números, booleanos até outras estruturas complexas.</p>
+    <p>Objeto: carro = {tipo:"Fiat", modelo:"500", cor:"branco"}</p>
+    <p id="demo1"></p>
+    
+    <script>
+    const carro1 = {tipo:"Fiat", modelo:"500", cor:"branco"};
+
+    document.getElementById("demo1").innerHTML =
+    "Ex: O tipo de carro é " + carro1.tipo + "<br><br>" +
+    "Ex: A cor do carro é " + carro1.cor;
+    </script>
+
+
+    <h1>Propriedades de um Objeto Javascript </h1>
+    <p>Um objeto é uma coleção não ordenada de propriedades e essas propriedades podem ser alteradas, adicionadas, deletadas ou somente lidas.</p>
+    <p>Objeto: carro = {tipo:"Fiat", modelo:"500", cor:"branco"}</p>
+    <p id="demo2"></p>
+
+    <script>
+        const carro2 = {tipo:"Fiat", modelo:"500", cor:"branco"};
+        
+        carro2.estado = "Novo"
+        delete carro2.cor;
+        document.getElementById("demo2").innerHTML =
+        "Ex: O estado do carro é " + carro2.estado + "<br><br>" + 
+        "Ex: A cor do carro é " + carro2.cor;
+    </script>
+    
+
+    <h1>Métodos de um Objeto Javascript</h1>
+    <p>Os métodos de um objeto Javascript são ações que podem ser realizadas no objeto. Esses métodos são definições de funções armazenadas como um valor de propriedade.</p>
+    <p>Objeto: const pessoa1 = {
+        primeiroNome: "Gabriel",
+        ultimoNome: "Freitas",
+        nomeCompleto: function() {
+            return this.primeiroNome + " " + this.ultimoNome;
+        }
+        }</p>
+
+    <p id="demo3"></p>
+
+    <script>
+        const pessoa1 = {
+        primeiroNome: "Gabriel",
+        ultimoNome: "Freitas",
+        nomeCompleto: function() {
+            return this.primeiroNome + " " + this.ultimoNome;
+        }
+        };
+
+        document.getElementById("demo3").innerHTML = "Ex: Meu nome completo é " + pessoa1.nomeCompleto() + "<br><br>" +
+        "Ex: Meu nome completo é " + pessoa1.nomeCompleto;
+    </script>
+    
+    <h1>Exibição de um Objeto Javascript</h1>
+    <p>Se você exibir um objeto Javascript ele vai aparecer como [objeto Objeto]. Existem algumas maneiras de exibir objetos, como exibir as propriedades por nome, em um loop, usando Objeto.values() ou JSON.stringify().</p>
+    <p>Objeto: const pessoa2 = {
+        primeiroNome: "Gabriel",
+        ultimoNome: "Freitas",
+        idade: 23
+        };</p>
+    <p id="demo4"></p>
+
+    <script>
+        const pessoa2 = {
+        primeiroNome: "Gabriel",
+        ultimoNome: "Freitas",
+        idade: 23
+        };
+
+        document.getElementById("demo4").innerHTML = "Ex: Meu nome é " + pessoa2.primeiroNome + " " + pessoa2.ultimoNome + " e eu tenho " + pessoa2.idade + " anos de idade" + "<br><br>" +
+        "Ex: Meu nome é " + JSON.stringify(pessoa2);
+    </script>
+
+    <h1>Construtores de um Objeto Javascript</h1>
+    <p>As vezes precisamos criar muitos objetos de um um mesmo "tipo". Para criar um "tipo" de um objeto nós utilizamos uma função construtora de objetos. é um bom hábito nomear as funções construtoras com letra maiúscula.</p>
+    <p>Função construtora do objeto: function Pessoa(primeiro, ultimo, idade, olho) {
+        this.primeiroNome = primeiro;
+        this.ultimoNome = ultimo;
+        this.idade = idade;
+        this.olhoCor = olho;
+        }</p>
+    <p id="demo5"></p>
+
+    <script>
+
+        function Pessoa(primeiro, ultimo, idade, olho) {
+        this.primeiroNome = primeiro;
+        this.ultimoNome = ultimo;
+        this.idade = idade;
+        this.olhoCor = olho;
+        }
+
+        const meuPai = new Pessoa("João", "Rocha", 50, "castanho");
+        const minhaMae = new Pessoa("Maria", "da Silva", 48, "verde")
+
+        document.getElementById("demo5").innerHTML =
+        "Ex: Meu pai tem " + meuPai.idade + " anos de idade" + "<br><br>" +
+        "Ex: Minha mãe tem olho " + minhaMae.olhoCor; 
+
+    </script>
+
+</body>
+</html>
