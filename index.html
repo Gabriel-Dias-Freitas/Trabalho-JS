@@ -1,17 +1,144 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trabalho JS</title>
+    <title>Laços de Repetição</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+        }
+
+        p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            padding: 15px;
+            overflow-x: auto;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        code {
+            background-color: #eaeaea;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Trabalho JS</h1>
-    <ul>
-        <li><a href="variaveis.html">Variáveis</a></li>
-        <li><a href="objetos.html">Objetos</a></li>
-        <li>Decisão</li>
-        <li>Laços de Repetição</li>
-    </ul>
+
+    <h1>Laços de Repetição</h1>
+
+    <div class="container">
+        <h2>1. Laço <code>for</code></h2>
+        <p>O laço <code>for</code> é o mais comum e é usado quando o número de iterações é conhecido.</p>
+        <pre><code>for (inicialização; condição; incremento) {
+    // Código a ser executado
+}
+
+for (let i = 0; i &lt; 5; i++) {
+    console.log(`Iteração ${i}`);
+}</code></pre>
+        <p>Este laço executa enquanto a condição <code>i &lt; 5</code> for verdadeira. O valor de <code>i</code> é incrementado
+            em 1 a cada iteração.</p>
+
+        <h2>2. Laço <code>while</code></h2>
+        <p>O laço <code>while</code> executa enquanto uma condição for verdadeira. É útil quando não se sabe quantas vezes
+            o laço será executado.</p>
+        <pre><code>let i = 0;
+while (i &lt; 5) {
+    console.log(`Iteração ${i}`);
+    i++;
+}</code></pre>
+        <p>Este laço continua até que <code>i</code> seja maior ou igual a 5.</p>
+
+        <h2>3. Laço <code>do...while</code></h2>
+        <p>Este laço é semelhante ao <code>while</code>, mas garante que o bloco de código seja executado pelo menos uma
+            vez, pois a condição é verificada após a execução.</p>
+        <pre><code>let i = 0;
+do {
+    console.log(`Iteração ${i}`);
+    i++;
+} while (i &lt; 5);</code></pre>
+        <p>Neste caso, o bloco será executado primeiro e a condição será verificada depois.</p>
+
+        <h2>4. Laço <code>for...in</code></h2>
+        <p>O <code>for...in</code> é usado para percorrer as propriedades de um objeto ou os índices de um array.</p>
+        <pre><code>const carro = { marca: 'Toyota', modelo: 'Corolla', ano: 2020 };
+for (let chave in carro) {
+    console.log(`${chave}: ${carro[chave]}`);
+}</code></pre>
+        <p>Aqui, o <code>for...in</code> percorre as chaves (ou propriedades) do objeto <code>carro</code>.</p>
+
+        <h2>5. Laço <code>for...of</code></h2>
+        <p>O <code>for...of</code> é usado para percorrer iteráveis, como arrays, strings, Map e Set.</p>
+        <pre><code>const carros = ['Toyota', 'Honda', 'Ford'];
+for (let carro of carros) {
+    console.log(carro);
+}</code></pre>
+        <p>Aqui, o <code>for...of</code> percorre os valores do array <code>carros</code>.</p>
+
+        <h2>6. Métodos de Arrays</h2>
+        <p>Os arrays em JavaScript têm métodos de iteração próprios, como <code>.forEach()</code>, <code>.map()</code>,
+            <code>.filter()</code> e <code>.reduce()</code>.</p>
+
+        <h3><code>.forEach()</code></h3>
+        <pre><code>const carros = ['Toyota', 'Honda', 'Ford'];
+carros.forEach((carro) => {
+    console.log(carro);
+});</code></pre>
+
+        <h3><code>.map()</code></h3>
+        <pre><code>const numeros = [1, 2, 3, 4];
+const numerosDobro = numeros.map(num => num * 2);
+console.log(numerosDobro); // [2, 4, 6, 8]</code></pre>
+
+        <h3><code>.filter()</code></h3>
+        <pre><code>const numeros = [1, 2, 3, 4, 5];
+const numerosMaioresQueTres = numeros.filter(num => num > 3);
+console.log(numerosMaioresQueTres); // [4, 5]</code></pre>
+
+        <h3><code>.reduce()</code></h3>
+        <pre><code>const numeros = [1, 2, 3, 4];
+const soma = numeros.reduce((acumulador, num) => acumulador + num, 0);
+console.log(soma); // 10</code></pre>
+    </div>
+
 </body>
+
 </html>
