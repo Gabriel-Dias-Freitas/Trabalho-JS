@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplos de If e Else em JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>Exemplos de If e Else</h1>
+
+    <div class="container">
+        <h2>1. Exemplo Básico de If e Else</h2>
+        <p>O exemplo abaixo demonstra o uso básico de uma estrutura condicional <code>if</code> e <code>else</code> para verificar se um número é positivo, negativo ou zero:</p>
+        <pre><code>let numero = 5;
+if (numero > 0) {
+    console.log("O número é positivo.");
+} else if (numero < 0) {
+    console.log("O número é negativo.");
+} else {
+    console.log("O número é zero.");
+}</code></pre>
+
+        <h2>2. Verificação de Idade</h2>
+        <p>Neste exemplo, a condição <code>if</code> é usada para verificar se uma pessoa é maior de idade ou menor de idade:</p>
+        <pre><code>let idade = 18;
+if (idade >= 18) {
+    console.log("Você é maior de idade.");
+} else {
+    console.log("Você é menor de idade.");
+}</code></pre>
+
+        <h2>3. Condição com String</h2>
+        <p>O próximo exemplo usa <code>if</code> para verificar o valor de uma string e exibir uma mensagem personalizada:</p>
+        <pre><code>let corFavorita = "azul";
+if (corFavorita === "azul") {
+    console.log("Sua cor favorita é azul!");
+} else if (corFavorita === "vermelho") {
+    console.log("Sua cor favorita é vermelho!");
+} else {
+    console.log("Você tem uma cor favorita diferente.");
+}</code></pre>
+
+        <h2>4. Uso de If e Else em Funções</h2>
+        <p>Este exemplo mostra como as estruturas de controle <code>if</code> e <code>else</code> podem ser usadas dentro de uma função:</p>
+        <pre><code>function verificarParidade(numero) {
+    if (numero % 2 === 0) {
+        return "O número é par.";
+    } else {
+        return "O número é ímpar.";
+    }
+}
+
+console.log(verificarParidade(4));  // O número é par.
+console.log(verificarParidade(7));  // O número é ímpar.</code></pre>
+    </div>
+
+</body>
+
+</html>
